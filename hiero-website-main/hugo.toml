@@ -1,0 +1,100 @@
+baseURL = 'https://hiero.org/'
+languageCode = 'en-us'
+title = 'Hiero'
+
+[services]
+  [services.googleAnalytics]
+    id = "G-CFHSWYZWW8"
+
+[privacy]
+  [privacy.googleAnalytics]
+    disable = false
+    respectDoNotTrack = true
+
+[[module.mounts]]
+source = 'static'
+target = 'static'
+
+[[module.mounts]]
+source = 'images'
+target = 'static/images'
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Good First Issues'
+url = 'https://github.com/issues?q=is%3Aopen+is%3Aissue+org%3Ahiero-ledger+archived%3Afalse+label%3A%22good+first+issue%22+'
+weight = 20
+
+[[menus.main]]
+name = 'Contribute'
+url = '/#contribute'
+weight = 30
+
+[[menus.main]]
+name = 'Repositories'
+url = '/#repos'
+weight = 35
+
+[[menus.main]]
+name = 'Connect'
+url = '/#connect'
+weight = 40
+
+[[menus.main]]
+name = 'Roadmap'
+url = '/#roadmap'
+weight = 50
+
+[[menus.main]]
+name = 'Blog'
+url = '/blog/'
+weight = 60
+
+[[menus.main]]
+name = 'Calendar'
+url = 'https://zoom-lfx.platform.linuxfoundation.org/meetings/hiero?view=week'
+weight = 70
+
+[permalinks]
+  [permalinks.page]
+    posts = '/blog/:slug/'
+  [permalinks.section]
+    posts = '/blog/'
+
+[params.blog.list]
+displayTags = true
+sortBy = "date"
+sortOrder = "desc"
+
+[params.blog.article]
+displayPagination = false
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+
+[params]
+fallbackBlogFeaturedImage = '/images/HI60000_GetInvolvedBanner_V1.jpg'
+enableImageLazyLoading = true
+
+[params.shareButtons]
+networks = [ "linkedin", "telegram", "twitter", "email" ]
+size = "small"
+icon = "solid"
+buttonMargin = "0.2em"
+
+[related]
+threshold = 80
+includeNewer = true
+toLower = true
+
+[[related.indices]]
+name = "tags"
+weight = 100
